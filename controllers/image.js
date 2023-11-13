@@ -35,45 +35,45 @@ const handleAPI = (req, res) => {
     );
 }
 
-const getClarifaiRequestOptions = (req) => { 
-    // Your PAT (Personal Access Token) can be found in the portal under Authentification
-    const PAT = 'efbcfa7162a146adab19f407654eedd3';
+// const getClarifaiRequestOptions = (req) => { 
+//     // Your PAT (Personal Access Token) can be found in the portal under Authentification
+//     const PAT = 'efbcfa7162a146adab19f407654eedd3';
 
-    // Specify the correct user_id/app_id pairings
-    // Since you're making inferences outside your app's scope
-    const USER_ID = 'reddlamar';       
-    const APP_ID = 'face-recognition';
+//     // Specify the correct user_id/app_id pairings
+//     // Since you're making inferences outside your app's scope
+//     const USER_ID = 'reddlamar';       
+//     const APP_ID = 'face-recognition';
 
-    // Change image URL you want to use  
-    const IMAGE_URL = req.body.input;
+//     // Change image URL you want to use  
+//     const IMAGE_URL = req.body.input;
 
-    const raw = JSON.stringify({
-        "user_app_id": {
-            "user_id": USER_ID,
-            "app_id": APP_ID
-        },
-        "inputs": [
-            {
-                "data": {
-                    "image": {
-                        "url": IMAGE_URL
-                    }
-                }
-            }
-        ]
-    });
+//     const raw = JSON.stringify({
+//         "user_app_id": {
+//             "user_id": USER_ID,
+//             "app_id": APP_ID
+//         },
+//         "inputs": [
+//             {
+//                 "data": {
+//                     "image": {
+//                         "url": IMAGE_URL
+//                     }
+//                 }
+//             }
+//         ]
+//     });
 
-    const requestOptions = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Authorization': 'Key ' + PAT
-        },
-        body: raw
-    };
+//     const requestOptions = {
+//         method: 'POST',
+//         headers: {
+//             'Accept': 'application/json',
+//             'Authorization': 'Key ' + PAT
+//         },
+//         body: raw
+//     };
 
-    return requestOptions;
-  };
+//     return requestOptions;
+// };
 
 const handleImage = (req, res, db) => {
     const { id } = req.body;

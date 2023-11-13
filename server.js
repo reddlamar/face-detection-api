@@ -17,16 +17,16 @@ const db = knex({
     }
 });
 
-db.select('*').from('users').then(data => {
-    console.log(data);
-});
+// db.select('*').from('users').then(data => {
+//     console.log(data);
+// });
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => { res.send('success') });
+// app.get('/', (req, res) => { res.send('success') });
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) });
 
